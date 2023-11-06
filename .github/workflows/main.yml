@@ -38,6 +38,39 @@ jobs:
         git branch
         git add .
         git commit -m "version update $version"
+        git tag -a v        pwd
+        git branch
+        export MY_VARIABLE=$(git rev-parse --abbrev-ref HEAD)
+        echo $MY_VARIABLE
+        git config --global user.email "mondeepdowari5658@gmail.com"
+        git config --global user.name "GitLab"
+        git rev-parse --abbrev-ref HEAD
+        git clone https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git
+        cd java_versioning/
+        git checkout dev
+        chmod +x version.sh
+        ./version.sh
+        
+        # ls -al src/main/resources/
+        # pwd
+        # git checkout main
+        # git lfs track "*.apk"
+        # ls -al
+        # mkdir new1
+        # # cp -r /home/runner/work/creating-a-pod-in-AKS-using-Jenkins-pipeline/creating-a-pod-in-AKS-using-Jenkins-pipeline/target/test-classes/com/* new12345/
+        # # mkdir new12345
+        # pwd
+        # ls -al
+        # cd new1/
+        # touch 123.txt
+        git add .
+        git commit -m "version update $version"
         git tag -a v$version -m "version $version"
+        echo $version
+        git tag 
+        git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git $version
+        git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target -m "version $version"
+        echo 
+        git tag
         git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git v$version
         git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
