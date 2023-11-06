@@ -50,6 +50,5 @@ jobs:
         git add .
         git commit -m "version update $version"
         git tag -a v$version -m "version $version"
-        git tag 
-        git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git $version
+        git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git v$version
         git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
