@@ -1,9 +1,9 @@
 #!/bin/bash
 set -ex
 
-cd ../
-branch=$(git rev-parse --abbrev-ref HEAD)
-cd  java_versioning/
+# cd ../
+branch=$(echo $MY_VARIABLE)
+# cd  java_versioning/
 
 jar_count=$(cat version.txt| wc -l)
 # echo $jar_count
