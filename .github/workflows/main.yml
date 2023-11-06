@@ -37,6 +37,7 @@ jobs:
         git clone https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git
         cd java_versioning/
         git rev-parse --abbrev-ref HEAD
+        git checkout dev
         chmod +x version.sh
         ./version.sh
         
