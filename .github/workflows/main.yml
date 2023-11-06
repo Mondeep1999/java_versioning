@@ -35,10 +35,10 @@ jobs:
         git branch
         git config --global user.email "mondeepdowari5658@gmail.com"
         git config --global user.name "GitLab"
-        rev-parse --abbrev-ref HEAD
+        git rev-parse --abbrev-ref HEAD
         git clone https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git
         cd java_versioning/
-        rev-parse --abbrev-ref HEAD
+        git rev-parse --abbrev-ref HEAD
         
         # chmod +x version.sh
         # ./version.sh
