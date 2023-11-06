@@ -41,7 +41,7 @@ fi
 
 cp -r /home/runner/work/java_versioning/java_versioning/app.release.txt .
 mv app.release.txt app-v$i.$j.$k.txt
-export version=v$i.$j.$k
+export version=$i.$j.$k
 echo $version
 ls -al
 # git add .
