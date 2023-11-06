@@ -39,10 +39,5 @@ else
 
 fi
 
-ls -al
-git add .
-git commit -m "Upload new app-release.aab"
-git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git $branch
-
 cp -r /home/runner/work/java_versioning/java_versioning/app.release.txt .
 mv app.release.txt app-v$i.$j.$k.txt
