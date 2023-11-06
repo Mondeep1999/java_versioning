@@ -54,6 +54,6 @@ jobs:
         # cd new1/
         # touch 123.txt
         ls -al
-        git add .
-        git commit -m "Upload new app-release.aab"
-        git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
+        # git add .
+        # git commit -m "Upload new app-release.aab"
+        # git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
