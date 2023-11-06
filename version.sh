@@ -4,7 +4,7 @@ set -ex
 # cd ../
 branch=$(echo $MY_VARIABLE)
 # cd  java_versioning/
-
+git checkout $branch
 jar_count=$(cat version.txt| wc -l)
 # echo $jar_count
 if [ $jar_count == 0 ]; then
@@ -41,12 +41,12 @@ fi
 
 cp -r /home/runner/work/java_versioning/java_versioning/app.release.txt .
 cp app.release.txt app-v$i.$j.$k.txt
-export version=$i.$j.$k
-echo $version
+# export version=$i.$j.$k
+# echo $version
 ls -al
-# git add .
-# git commit -m "version update $version"
-# git tag -a $version -m "version $version"
-# git tag 
-# git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git $version
-# git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
+git add .
+git commit -m "version update v$i.$j.$k"
+git tag -a v$i.$j.$k -m "version v$i.$j.$k"
+git tag 
+git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git v$i.$j.$k
+git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
