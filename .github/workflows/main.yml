@@ -36,17 +36,7 @@ jobs:
         git checkout dev
         chmod +x version.sh
         ./version.sh
-        
-        # ls -al src/main/resources/
-        # pwd
-        # git checkout main
-        # git lfs track "*.apk"
-        # ls -al
-        # mkdir new1
-        # # cp -r /home/runner/work/creating-a-pod-in-AKS-using-Jenkins-pipeline/creating-a-pod-in-AKS-using-Jenkins-pipeline/target/test-classes/com/* new12345/
-        # # mkdir new12345
-        # pwd
-
+        git branch
         git add .
         git commit -m "version update $version"
         git tag -a v$version -m "version $version"
