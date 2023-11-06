@@ -26,12 +26,8 @@ jobs:
       run: |
         sudo apt-get install git-lfs
         git lfs install
-        pwd
-        cd target/test-classes/com
         ls -al
         pwd
-        git branch
-        git fetch --all
         git branch
         git config --global user.email "mondeepdowari5658@gmail.com"
         git config --global user.name "GitLab"
