@@ -29,6 +29,8 @@ jobs:
         ls -al
         pwd
         git branch
+        export MY_VARIABLE=$(git rev-parse --abbrev-ref HEAD)
+        echo $MY_VARIABLE
         git config --global user.email "mondeepdowari5658@gmail.com"
         git config --global user.name "GitLab"
         git rev-parse --abbrev-ref HEAD
