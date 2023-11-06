@@ -1,0 +1,57 @@
+name: Java CI with Maven
+
+on:
+  push:
+    branches: 
+      - "main"
+      - "version"
+      - "dev"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Upload release.aab to release branch
+      run: |
+        sudo apt-get install git-lfs
+        git lfs install
+        pwd
+        cd target/test-classes/com
+        ls -al
+        pwd
+        git branch
+        git fetch --all
+        git branch
+        git config --global user.email "mondeepdowari5658@gmail.com"
+        git config --global user.name "GitLab"
+        git clone https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git
+        cd java_versioning/
+        chmod +x version.sh
+        ./version.sh
+        # ls -al src/main/resources/
+        # pwd
+        # git checkout main
+        # git lfs track "*.apk"
+        # ls -al
+        # mkdir new1
+        # # cp -r /home/runner/work/creating-a-pod-in-AKS-using-Jenkins-pipeline/creating-a-pod-in-AKS-using-Jenkins-pipeline/target/test-classes/com/* new12345/
+        # # mkdir new12345
+        # pwd
+        # ls -al
+        # cd new1/
+        # touch 123.txt
+        # ls -al
+        # git add .
+        # git commit -m "Upload new app-release.aab"
+        # git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git main
