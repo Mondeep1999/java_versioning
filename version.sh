@@ -41,10 +41,12 @@ fi
 
 cp -r /home/runner/work/java_versioning/java_versioning/app.release.txt .
 mv app.release.txt app-v$i.$j.$k.txt
+export version=v$i.$j.$k
+echo $version
 ls -al
-git add .
-git commit -m "version update $i.$j.$k"
-git tag -a v$i.$j.$k -m "version $i.$j.$k"
-git tag 
-git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git v$i.$j.$k
-git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
+# git add .
+# git commit -m "version update $version"
+# git tag -a $version -m "version $version"
+# git tag 
+# git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git $version
+# git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
