@@ -24,9 +24,9 @@ jobs:
 
     - name: Upload release.aab to release branch
       run: |
-        sudo apt-get install git-lfs
-        git lfs install
-        ls -al
+        # sudo apt-get install git-lfs
+        # git lfs install
+        # ls -al
         pwd
         git branch
         export MY_VARIABLE=$(git rev-parse --abbrev-ref HEAD)
@@ -36,7 +36,6 @@ jobs:
         git rev-parse --abbrev-ref HEAD
         git clone https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git
         cd java_versioning/
-        git rev-parse --abbrev-ref HEAD
         git checkout dev
         chmod +x version.sh
         ./version.sh
@@ -53,7 +52,6 @@ jobs:
         # ls -al
         # cd new1/
         # touch 123.txt
-        ls -al
         git add .
         git commit -m "version update $version"
         git tag -a v$version -m "version $version"
