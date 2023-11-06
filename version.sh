@@ -46,5 +46,5 @@ git add .
 git commit -m "version update $i.$j.$k"
 git tag -a v$i.$j.$k -m "version $i.$j.$k"
 git tag 
-git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git $i.$j.$k
+git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git v$i.$j.$k
 git push https://${{ secrets.username }}:${{ secrets.pass }}@${{ secrets.git_url }}.git target
